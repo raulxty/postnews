@@ -1,7 +1,10 @@
-# 自动抓取最新的财经新闻，翻译成英语，并通过邮箱发布一篇wordpress博客
+# 自动更新的英语新闻网站
 
 新闻来源：https://live.nbd.com.cn/
+
 演示网站：https://live.everyai.online/
+
+先抓取最新的新闻，然后用腾讯翻译API翻译，然后发布到wordpress网站
 
 ### 修改配置
 1. 配置163邮箱密钥（发送邮箱）
