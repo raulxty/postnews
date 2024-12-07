@@ -15,29 +15,14 @@
 
 ### 详细步骤
 
-1. **上传脚本**：
-    使用 `scp` 命令将 `setup_script.sh` 上传到Lightsail实例。
-    ```sh
-    scp -i ~/Downloads/LightsailDefaultKey-us-east-1.pem setup_script.sh bitnami@<instance-ip>:~
-    ```
-    例如：
-    ```sh
-    scp -i ~/Downloads/LightsailDefaultKey-us-east-1.pem setup_script.sh bitnami@192.0.2.1:~
-    ```
 
-2. **连接到实例**：
-    使用SSH连接到Lightsail实例。
-    ```sh
-    ssh -i ~/Downloads/LightsailDefaultKey-us-east-1.pem bitnami@192.0.2.1
-    ```
-
-3. **赋予脚本执行权限**：
+1. **赋予脚本执行权限**：
     确保 `setup_script.sh` 具有执行权限。
     ```sh
     chmod +x setup_script.sh
     ```
 
-4. **运行脚本**：
+2. **运行脚本**：
     执行脚本来安装依赖、配置服务并启动脚本。
     ```sh
     ./setup_script.sh
