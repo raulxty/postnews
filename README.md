@@ -17,15 +17,15 @@
 
 
 1. **赋予脚本执行权限**：
-    确保 `setup_script.sh` 具有执行权限。
+    确保 `postnews.sh` 具有执行权限。
     ```sh
-    chmod +x setup_script.sh
+    chmod +x postnews.sh
     ```
 
 2. **运行脚本**：
     执行脚本来安装依赖、配置服务并启动脚本。
     ```sh
-    ./setup_script.sh
+    ./postnews.sh
     ```
 
 ### 验证部署
