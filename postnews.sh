@@ -52,6 +52,7 @@ import hashlib
 import base64
 import json
 from datetime import datetime
+import uuid
 
 # 定义要抓取的网站URL
 url = 'https://live.nbd.com.cn/'
@@ -59,14 +60,14 @@ url = 'https://live.nbd.com.cn/'
 # 邮件配置
 smtp_server = 'smtp.163.com'  # SMTP服务器地址
 smtp_port = 465  # SMTP端口（SSL/TLS）
-smtp_username = 'XXXX'  # 发件人邮箱地址
-smtp_password = 'XXXX'  # 使用授权码
-recipient_email = 'XXXX'  # 收件人邮箱地址
+smtp_username = 'raulxty@163.com'  # 发件人邮箱地址
+smtp_password = 'xxxx'  # 使用授权码
+recipient_email = 'xxxx'  # 收件人邮箱地址
 
 # 翻译API配置
 translation_url = 'https://tmt.tencentcloudapi.com/'
-secret_id = 'XXXX'
-secret_key = 'XXXX'
+secret_id = 'xxxx'
+secret_key = 'xxxx'
 
 def get_tencent_cloud_signature(params, secret_key):
     sorted_params = '&'.join(sorted(['='.join([str(k), str(v)]) for k, v in params.items()]))
@@ -114,6 +115,10 @@ def send_email(subject, body, recipient):
     msg['From'] = smtp_username
     msg['To'] = recipient
     msg['Subject'] = subject
+    msg['Date'] = datetime.now().strftime('%a, %d %b %Y %H:%M:%S %z')
+    msg['Message-ID'] = f"<{uuid.uuid4()}@yourdomain.com>"
+    msg['MIME-Version'] = '1.0'
+    msg['Content-Type'] = 'text/plain; charset=utf-8'
     
     msg.attach(MIMEText(body, 'plain'))
     
